@@ -11,7 +11,7 @@ This project builds a multi-modal chat application that integrates text, image, 
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/multi-modal-chat.git
+   git clone https://github.com/yash3056/Multi-modal_ChatBot.git
    ```
 2. Install dependencies:
    ```bash
