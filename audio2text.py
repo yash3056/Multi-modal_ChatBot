@@ -1,14 +1,14 @@
 import torch
 import torchaudio
 import numpy as np
-from transformers import WhisperProcessor, WhisperForConditionalGeneration, AutoTokenizer, LlamaForCausalLM
+from transformers import AutoProcessor, WhisperForConditionalGeneration, AutoTokenizer, LlamaForCausalLM
 
 class MultimodalSystem:
-    def __init__(self, whisper_model="openai/whisper-tiny", llama_model="meta-llama/Llama-3.2-1B-Instruct"):
+    def __init__(self, whisper_model="openai/whisper-tiny", llama_model="meta-llama/Llama-3.2-3B-Instruct"):
         self.device = torch.device("xpu" if torch.xpu.is_available() else "cpu")
 
         # Initialize Whisper
-        self.whisper_processor = WhisperProcessor.from_pretrained(whisper_model)
+        self.whisper_processor = AutoProcessor.from_pretrained(whisper_model)
         self.whisper_model = WhisperForConditionalGeneration.from_pretrained(whisper_model).to(self.device)
         
         # Initialize Llama

@@ -4,3 +4,5 @@ moviepy
 soundfile
 sentencepiece
 protobuf
+timm
+einops
